@@ -1,1 +1,2 @@
 # Farm_Hotel_Link
+Farm Hotel Link is a web application that connects farmers with hotel owners, helping them meet the daily demand for fresh vegetables. Farmers can register on the platform to list the vegetables they produce, while hotel owners can register to place orders based on their requirements. The platform also allows hotel owners to highlight special dishes that need specific vegetable requirements, which farmers can view and fulfill.
