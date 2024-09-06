@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Hotel Link</title>
+    <style>
+        /*To make the Full-Page Background Image */
+        img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Form Container */
+        form {
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+            animation: formFadeIn 4s ease-in-out;
+        }
+
+        /* For Submit Buttons */
+        .submit-button {
+            background-color: #6d5f5a;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            width: 80%;
+            padding: 15px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 20px;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(186, 134, 36, 0.2);
+        }
+
+        /* For Welcome Text */
+        p {
+            color: black;
+            font-size: 100px;
+            animation: formFadeIn 2s ease-in-out;
+            text-align: center;
+            font-family:
+        }
+
+        /* Animations */
+        @keyframes formFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* Larger Radio Buttons */
+         input[type="radio"] {
+        transform: scale(2.5); /* Adjust the scale factor to increase or decrease the size */
+         margin-right: 10px; /* Adds some space between the radio button and the label */
+        }
+
+        
+        /* Larger Radio Buttons Text with Background Color */
+         .user-label {
+         font-size: 54px; /* Adjust the font size as needed */
+         color: #080000; /* Text color */
+         background-color: #6d5f5a; /* Background color */
+         padding: 5px; /* Adds space around the text inside the background */
+         border-radius: 5px; /* Optional: Rounds the corners of the background */
+         }
+
+        
+
+    </style>
+</head>
+<body>
+    <img src="https://cdn.wallpapersafari.com/34/11/EqLblg.jpg" alt="farm with tractor">
+
+    <p><u>Welcome To<br>Farm Hotel Link</u></p>
+
+    <form action="redirect.php"  method="POST">
+        <label class="user-label">
+            <input type="radio" name="userType" value="Farmer" required> Farmer
+        </label>
+        <br>
+        <label class="user-label">
+            <input type="radio" name="userType" value="Hotel Owner" required> Hotel Owner
+        </label>
+        <br>
+        <button type="submit" class="submit-button">Continue</button>
+    </form>
+</body>
+</html>
