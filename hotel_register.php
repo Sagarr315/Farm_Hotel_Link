@@ -62,7 +62,7 @@
     <div class="form-container">
         <center>
             <h1><u>Hotel Owner Registration</u></h1>
-            <form action="process_hotels_registration.php" method="POST">
+            <form  id="registrationForm" action="process_hotels_registration.php" method="POST" onsubmit="return validateForm();">
                 <input type="text" name="name" placeholder="Hotel Owner Name" required><br>
                 <input type="email" name="email" placeholder="Email" required><br>
                 <input type="tel" name="phone" placeholder="Phone Number" required><br>
@@ -75,5 +75,30 @@
             </form>
         </center>
     </div>
+
+ <script> // javascipt for client-side validation
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    var password = document.getElementById('password').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+
+    if (password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        event.preventDefault(); // Prevent form submission
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault(); // Prevent form submission
+    }
+
+    var phonePattern = /^\d{10}$/;
+    if (!phonePattern.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        event.preventDefault(); // Prevent form submission
+    }
+});
+</script>
 </body>
 </html>
