@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px; /* Increased padding */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Increased shadow */
+            width: 400px; /* Increased width */
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px; /* Increased margin */
+            color: #333;
+            font-size: 32px; /* Increased font size */
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 15px; /* Increased padding */
+            margin-bottom: 15px; /* Increased margin */
+            border: 1px solid #ddd;
+            border-radius: 6px; /* Increased border radius */
+            font-size: 18px; /* Increased font size */
+        }
+        button {
+            width: 100%;
+            padding: 15px; /* Increased padding */
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px; /* Increased border radius */
+            font-size: 18px; /* Increased font size */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .forgot-password {
+            margin-bottom: 15px; /* Increased margin */
+        }
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 18px; /* Increased font size */
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Login</h1>
+        <form action="process_login.php" method="POST">
+            <input type="email" name="email" placeholder="Email" required><br>
+            <input type="password" name="password" placeholder="Password" required><br>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
