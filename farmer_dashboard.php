@@ -38,32 +38,30 @@ if (!isset($_SESSION['UserID']) || $_SESSION['UserType'] != 'Farmer') {
             align-items: center;
         }
 
-        .search-container {
-    display: flex;
-    justify-content: space-between; /* Ensures search bar is aligned properly */
-    width: 40%; /* Adjust percentage based on how wide you want it */
-    margin: 0 auto; /* Centers the search bar */
-}
+       .search-container {
+       display: flex;
+       justify-content: space-between; /* Ensures search bar is aligned properly */
+       width: 40%; /* Adjust percentage based on how wide you want it */
+       margin: 0 auto; /* Centers the search bar */
+       }
 
-.search-container input[type="text"] {
-    width: 85%; /* Adjusts the search input to take most of the available space */
-    padding: 10px;
-    border: none;
-    margin-right: 10px; 
-    border-radius: 4px;
-    font-size: 14px;
-}
+       .search-container input[type="text"] {
+       width: 85%; /* Adjusts the search input to take most of the available space */
+       padding: 10px;
+       border: none;
+       margin-right: 10px; 
+       border-radius: 4px;
+       font-size: 14px;
+        }
 
-.search-container button {
-    width: 12%; /* Adjust width for the search button */
-    padding: 10px;
-    border: 1px solid #ccc;
-    background-color: white;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-
+       .search-container button {
+        width: 12%; /* Adjust width for the search button */
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+        border-radius: 4px;
+        font-size: 14px;
+        }
         /* Menu Styles (Similar to Hotel Owner Dashboard) */
         .menu {
             display: flex;
