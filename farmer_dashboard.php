@@ -26,33 +26,74 @@ if (!isset($_SESSION['UserID']) || $_SESSION['UserType'] != 'Farmer') {
         /* Header Styles */
         header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #228B22; /* Background color for Farmer dashboard */
             color: white;
         }
 
-        .menu nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .header-top {
             display: flex;
+            
+            align-items: center;
         }
 
-        .menu nav ul li {
-            margin-right: 20px;
+        .search-container {
+    display: flex;
+    justify-content: space-between; /* Ensures search bar is aligned properly */
+    width: 40%; /* Adjust percentage based on how wide you want it */
+    margin: 0 auto; /* Centers the search bar */
+}
+
+.search-container input[type="text"] {
+    width: 85%; /* Adjusts the search input to take most of the available space */
+    padding: 10px;
+    border: none;
+    margin-right: 10px; 
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-container button {
+    width: 12%; /* Adjust width for the search button */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+        /* Menu Styles (Similar to Hotel Owner Dashboard) */
+        .menu {
+            display: flex;
+            flex-wrap: wrap; /* Allows wrapping */
+            margin-top: 10px; /* Increased margin for better spacing */
         }
 
-        .menu nav ul li a {
-            color: white;
+        .menu-item {
+            margin: 5px;
+            border-radius: 4px;
+            padding: 10px;
+            color: Black;
+            text-align: center;
+            font-weight: bold;
+            background-color: #F0FFF0; /* Keeping the existing color for Farmer */
+        }
+
+        .menu-item a {
+            color: Black;
             text-decoration: none;
-            font-size: 16px;
+            display: block;
+        }
+
+        .menu-item a:hover {
+            background-color: #555; /* Hover effect */
         }
 
         .user-profile {
-            display: flex;
-            align-items: center;
+            margin-left: auto; /* Push the welcome message to the right side */
+            font-size: 16px;
         }
 
         /* Main Section Styles */
@@ -61,7 +102,7 @@ if (!isset($_SESSION['UserID']) || $_SESSION['UserType'] != 'Farmer') {
         }
 
         h1 {
-            color: #4CAF50;
+            color: #228B22; /* Retain the header color */
             font-size: 28px;
         }
 
@@ -80,18 +121,27 @@ if (!isset($_SESSION['UserID']) || $_SESSION['UserType'] != 'Farmer') {
 <body>
     <!-- Header Section -->
     <header>
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href="farmer_dashboard.html">Home</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="orders.html">Orders</a></li>
-                    <li><a href="logout.php">Logout</a></li>
-                </ul>
-            </nav>
+        <div class="header-top">
+            <img src="images/farm_hotel_link_logo.png" alt="Farm Hotel Link Logo" class="logo" style="width: 65px;"> <!-- Add the logo here -->
+            <strong style="font-size: 45px; color: white;">Farm Hotel Link</strong> <!-- Website Name -->
+            <div class="search-container">
+                <input type="text" placeholder="Search For Hotel Or Product... "> <!-- Search Bar -->
+                <button type="button">Search</button>
+            </div>
+            <div class="user-profile">
+                <span>Welcome, <?php echo $_SESSION['Name']; ?> (Farmer)</span> <!-- PHP code to display the logged-in farmer's name -->
+            </div>
         </div>
-        <div class="user-profile">
-            <span>Welcome, <?php echo $_SESSION['Name']; ?> (Farmer)</span> <!-- PHP code to display the logged-in farmer's name -->
+
+        <!-- Menu Section (Updated to match Hotel Owner layout) -->
+        <div class="menu">
+            <div class="menu-item"><a href="farmer_dashboard.php">Home</a></div>
+            <div class="menu-item"><a href="profile.php">Profile</a></div>
+            <div class="menu-item"><a href="manage_products.php">Manage Products</a></div>
+            <div class="menu-item"><a href="view_hotel_owners.php">Hotel Location</a></div>
+            <div class="menu-item"><a href="view_special_dishes.php">Special Dishes</a></div>
+            <div class="menu-item"><a href="orders_overview.php">Orders</a></div>
+            <div class="menu-item"><a href="logout.php">Logout</a></div>
         </div>
     </header>
 
@@ -115,3 +165,6 @@ if (!isset($_SESSION['UserID']) || $_SESSION['UserType'] != 'Farmer') {
     </script>
 </body>
 </html>
+
+
+
